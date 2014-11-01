@@ -23,6 +23,7 @@ end
 put '/:id' do
   task = Task.get params[:id]
   task.status = params[:status]
+  task.status_desc = params[:status_desc]
   task.updated_at = Time.now
   task.save
   redirect '/'
@@ -32,7 +33,6 @@ post '/' do
   task = Task.new
   task.title = params[:title]
   task.status = params[:status]
-  task.status_desc = params[:status_desc]
   task.desc = params[:desc]
   task.username = params[:username]
   task.created_at = Time.now

@@ -4,12 +4,12 @@
     <p>- <%= @task.username %></p>
     <p>Current status: <%= @task.status %></p>
     <p>Status description: <%= @task.status_desc %></p>
+    <p>Last time updated: <%= @task.updated_at.to_time %></p>
     <form action="/<%= @task.id %>" method="post" id="edit" >
       <input type="hidden" name="_method" value="put">
       <input type="radio" name="status" value="todo" <%= 'checked' if @task.status == "todo" %>> To-Do
       <input type="radio" name="status" value="inprogress" <%= 'checked' if @task.status == "inprogress" %>> In Progress
       <input type="radio" name="status" value="done" <%= 'checked' if @task.status == "done" %>> Done
-      <br>
       <input type="text" name="status_desc" placeholder="Status description">
       <input type="submit" value="submit">
     </form>
