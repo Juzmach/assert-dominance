@@ -8,7 +8,10 @@ DataMapper::setup(:default,"sqlite3://#{Dir.pwd}/database.db")
 DataMapper.auto_upgrade!
 
 get '/' do
-  @tasks = Task.all :order => :id.desc
+  # @tasks = Task.all :order => :status.desc
+  @todos = Task.find_all {|task| task.status == "todo"}
+  @inprogresses = Task.all.find_all {|task| task.status == "inprogress"}
+  @doneds = Task.all.find_all {|task| task.status == "done"}
   erb :index
 end
 

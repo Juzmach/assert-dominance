@@ -1,4 +1,6 @@
 <% if @task %>
+    <h1><%= @task.title %></h1>
+    <p><%= @task.desc %></p>
     <form action="/<%= @task.id %>" method="post" id="edit" >
       <input type="hidden" name="_method" value="put">
       <input type="radio" name="status" value="todo"> To-Do

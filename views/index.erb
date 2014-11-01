@@ -1,5 +1,3 @@
-<h1>assert(dominance)</h1>
-
 <h2>Tasks</h2>
 
 <section>
@@ -11,9 +9,30 @@
   </form>
 </section>
 
-<% @tasks.each do |task| %>
-    <h3><%= task.title %></h3>
-    <%= task.status %><br>
-    <%= task.desc %><br>
-    <a href="/<%= task.id %>">Select</a>
+<% @todos.each do |task| %>
+    <ul>
+      <li>
+          <a href="/<%= task.id %>"><h3><%= task.title %></h3></a>
+        <%= task.status %>
+      </li>
+    </ul>
+<% end %>
+
+<% @inprogresses.each do |task| %>
+    <ul>
+      <li>
+          <a href="/<%= task.id %>"><h3><%= task.title %></h3></a>
+        <%= task.status %>
+
+      </li>
+    </ul>
+<% end %>
+
+<% @doneds.each do |task| %>
+    <ul>
+    <li>
+          <a href="/<%= task.id %>"><h3><%= task.title %></h3></a>
+      <%= task.status %>
+      </li>
+    </ul>
 <% end %>
