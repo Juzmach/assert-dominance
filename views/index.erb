@@ -1,1 +1,14 @@
 <h1>assert(dominance)</h1>
+
+<h2>Tasks</h2>
+
+<section>
+  <form action="/" method="post">
+    <input type="text" name="title">
+    <input type="submit" value="submit">
+  </form>
+</section>
+
+<% @tasks.each do |task| %>
+    <h3><%= task.title %></h3>
+<% end %>
