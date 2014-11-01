@@ -12,9 +12,23 @@ get '/' do
   erb :index
 end
 
+get '/:id' do
+  @task = Task.get params[:id]
+  erb :edit
+end
+
+put '/:id' do
+  task = Task.get params[:id]
+  task.status = params[:status]
+  task.updated_at = Time.now
+  task.save
+  redirect '/'
+end
+
 post '/' do
   task = Task.new
   task.title = params[:title]
+  task.status = params[:status]
   task.created_at = Time.now
   task.updated_at = Time.now
   task.save
