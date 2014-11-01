@@ -32,11 +32,23 @@ post '/' do
   task = Task.new
   task.title = params[:title]
   task.status = params[:status]
+  task.status_desc = params[:status_desc]
   task.desc = params[:desc]
   task.username = params[:username]
   task.created_at = Time.now
   task.updated_at = Time.now
   task.save
+  redirect '/'
+end
+
+get '/:id/delete' do
+  @task = Task.get params[:id]
+  erb :delete
+end
+
+delete '/:id' do
+  task = Task.get params[:id]
+  task.destroy
   redirect '/'
 end
 

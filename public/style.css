@@ -2,12 +2,14 @@ body {
     font-family: sans-serif;
 }
 
-header {
-
+.headercontainer {
+    width: 100%;
+    padding: 0;
+    clear:both;
 }
 
-header h1 {
-    font-size: 500%;
+.headerpanel {
+    float: left;
 }
 
 ul {
@@ -27,7 +29,11 @@ a {
 }
 
 .add {
-    text-align: center;
+    width: 25%;
+}
+
+.header-text {
+    width: 75%;
 }
 
 .panelcontainer {

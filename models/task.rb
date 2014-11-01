@@ -7,6 +7,6 @@ class Task
   property :desc, Text, required: true
   property :username, String, required: true
   property :status, String, required: true
-  property :status_desc, Text
+  property :status_desc, String
   property :priority, Integer
 end
