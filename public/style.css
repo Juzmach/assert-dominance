@@ -1,10 +1,83 @@
+body {
+    font-family: sans-serif;
+}
+
 header {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
 
 }
 
+header h1 {
+    font-size: 500%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 3%;
+    border: solid 1px grey;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.add {
+    text-align: center;
+}
+
+.panelcontainer {
+    width: 100%;
+    padding: 0;
+}
+
+.panel {
+    float: left;
+}
+
+.panel h3 {
+    text-align: center;
+}
+
 .todo {
-    margin-left: 10%;
+    width: 32%;
+}
+
+.todo ul {
+    background-color: red;
+    border: 1px solid black;
+}
+
+.todo li:nth-child(odd) {
+    background-color: darkred;
+}
+
+.inprogress {
+    width: 33%;
+}
+
+.inprogress ul {
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.inprogress li:nth-child(odd){
+    background-color: orange;
+}
+
+.done {
+    width: 32%;
+}
+
+.done ul {
+    background-color: green;
+    border: 1px solid black;
+}
+
+.done li:nth-child(odd){
+    background-color: darkgreen;
 }

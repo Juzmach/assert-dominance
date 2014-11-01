@@ -33,6 +33,7 @@ post '/' do
   task.title = params[:title]
   task.status = params[:status]
   task.desc = params[:desc]
+  task.username = params[:username]
   task.created_at = Time.now
   task.updated_at = Time.now
   task.save
