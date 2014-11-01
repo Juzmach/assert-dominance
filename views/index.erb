@@ -4,7 +4,8 @@
 
 <section>
   <form action="/" method="post">
-    <input type="text" name="title">
+    <input type="text" name="title" placeholder="Title"><br>
+    <textarea name="desc" placeholder="Description"></textarea>
     <input type="hidden" name="status" value="todo">
     <input type="submit" value="submit">
   </form>
@@ -12,6 +13,7 @@
 
 <% @tasks.each do |task| %>
     <h3><%= task.title %></h3>
-    <%= task.status %>
-    <a href="/<%= task.id %>">Edit</a>
+    <%= task.status %><br>
+    <%= task.desc %><br>
+    <a href="/<%= task.id %>">Select</a>
 <% end %>

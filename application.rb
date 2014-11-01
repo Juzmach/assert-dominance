@@ -14,7 +14,7 @@ end
 
 get '/:id' do
   @task = Task.get params[:id]
-  erb :edit
+  erb :task
 end
 
 put '/:id' do
@@ -29,6 +29,7 @@ post '/' do
   task = Task.new
   task.title = params[:title]
   task.status = params[:status]
+  task.desc = params[:desc]
   task.created_at = Time.now
   task.updated_at = Time.now
   task.save
